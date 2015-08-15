@@ -1,0 +1,234 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>mca</Name>
+    <ProjectGuid>63456823-2a41-4651-99ec-22f751f06c86</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>mca</RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>mca</AssemblyName>
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+    <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+    <Server>Custom</Server>
+    <PublishEvent>None</PublishEvent>
+    <PHPDevAutoPort>True</PHPDevAutoPort>
+    <PHPDevPort>6880</PHPDevPort>
+    <PHPDevHostName>localhost</PHPDevHostName>
+    <IISProjectUrl>http://localhost/</IISProjectUrl>
+    <CustomServerUrl>http://localhost/mca/mca/</CustomServerUrl>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="admin\ajax\avatar.php" />
+    <Compile Include="admin\ajax\list-sort.php" />
+    <Compile Include="admin\ajax\navigation.php" />
+    <Compile Include="admin\ajax\pages.php" />
+    <Compile Include="admin\ajax\sidebar.php" />
+    <Compile Include="admin\config\css.php" />
+    <Compile Include="admin\config\js.php" />
+    <Compile Include="admin\config\query.php" />
+    <Compile Include="admin\config\setup.php" />
+    <Compile Include="admin\functions\data.php" />
+    <Compile Include="admin\functions\sandbox.php" />
+    <Compile Include="admin\functions\template.php" />
+    <Compile Include="admin\index.php" />
+    <Compile Include="admin\login.php" />
+    <Compile Include="admin\logout.php" />
+    <Compile Include="admin\template\footer.php" />
+    <Compile Include="admin\template\header.php" />
+    <Compile Include="admin\template\nevigation.php" />
+    <Compile Include="admin\uploads.php" />
+    <Compile Include="admin\views\dashboard.php" />
+    <Compile Include="admin\views\navigation.php" />
+    <Compile Include="admin\views\pages.php" />
+    <Compile Include="admin\views\product.php" />
+    <Compile Include="admin\views\settings.php" />
+    <Compile Include="admin\views\sidebar.php" />
+    <Compile Include="admin\views\users.php" />
+    <Compile Include="admin\widgets\debug.php" />
+    <Compile Include="config\connection.php" />
+    <Compile Include="config\css.php" />
+    <Compile Include="config\js.php" />
+    <Compile Include="config\setup.php" />
+    <Compile Include="functions\data.php" />
+    <Compile Include="functions\sandbox.php" />
+    <Compile Include="functions\template.php" />
+    <Compile Include="index.php" />
+    <Compile Include="template\footer.php" />
+    <Compile Include="template\header.php" />
+    <Compile Include="template\imageshow.php" />
+    <Compile Include="template\nevigation.php" />
+    <Compile Include="views\page.php" />
+    <Compile Include="views\sidebar.php" />
+    <Compile Include="widgets\debug.php" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="admin\config\" />
+    <Folder Include="admin\functions\" />
+    <Folder Include="admin\js\" />
+    <Folder Include="admin\js\tinymce\" />
+    <Folder Include="admin\js\tinymce\langs\" />
+    <Folder Include="admin\js\tinymce\plugins\" />
+    <Folder Include="admin\js\tinymce\plugins\advlist\" />
+    <Folder Include="admin\js\tinymce\plugins\anchor\" />
+    <Folder Include="admin\js\tinymce\plugins\autolink\" />
+    <Folder Include="admin\js\tinymce\plugins\autoresize\" />
+    <Folder Include="admin\js\tinymce\plugins\autosave\" />
+    <Folder Include="admin\js\tinymce\plugins\bbcode\" />
+    <Folder Include="admin\js\tinymce\plugins\charmap\" />
+    <Folder Include="admin\js\tinymce\plugins\code\" />
+    <Folder Include="admin\js\tinymce\plugins\colorpicker\" />
+    <Folder Include="admin\js\tinymce\plugins\contextmenu\" />
+    <Folder Include="admin\js\tinymce\plugins\directionality\" />
+    <Folder Include="admin\js\tinymce\plugins\emoticons\" />
+    <Folder Include="admin\js\tinymce\plugins\emoticons\img\" />
+    <Folder Include="admin\js\tinymce\plugins\example\" />
+    <Folder Include="admin\js\tinymce\plugins\example_dependency\" />
+    <Folder Include="admin\js\tinymce\plugins\fullpage\" />
+    <Folder Include="admin\js\tinymce\plugins\fullscreen\" />
+    <Folder Include="admin\js\tinymce\plugins\hr\" />
+    <Folder Include="admin\js\tinymce\plugins\image\" />
+    <Folder Include="admin\js\tinymce\plugins\importcss\" />
+    <Folder Include="admin\js\tinymce\plugins\insertdatetime\" />
+    <Folder Include="admin\js\tinymce\plugins\layer\" />
+    <Folder Include="admin\js\tinymce\plugins\legacyoutput\" />
+    <Folder Include="admin\js\tinymce\plugins\link\" />
+    <Folder Include="admin\js\tinymce\plugins\lists\" />
+    <Folder Include="admin\js\tinymce\plugins\media\" />
+    <Folder Include="admin\js\tinymce\plugins\nonbreaking\" />
+    <Folder Include="admin\js\tinymce\plugins\noneditable\" />
+    <Folder Include="admin\js\tinymce\plugins\pagebreak\" />
+    <Folder Include="admin\js\tinymce\plugins\paste\" />
+    <Folder Include="admin\js\tinymce\plugins\preview\" />
+    <Folder Include="admin\js\tinymce\plugins\print\" />
+    <Folder Include="admin\js\tinymce\plugins\save\" />
+    <Folder Include="admin\js\tinymce\plugins\searchreplace\" />
+    <Folder Include="admin\js\tinymce\plugins\spellchecker\" />
+    <Folder Include="admin\js\tinymce\plugins\tabfocus\" />
+    <Folder Include="admin\js\tinymce\plugins\table\" />
+    <Folder Include="admin\js\tinymce\plugins\template\" />
+    <Folder Include="admin\js\tinymce\plugins\textcolor\" />
+    <Folder Include="admin\js\tinymce\plugins\textpattern\" />
+    <Folder Include="admin\js\tinymce\plugins\visualblocks\" />
+    <Folder Include="admin\js\tinymce\plugins\visualblocks\css\" />
+    <Folder Include="admin\js\tinymce\plugins\visualchars\" />
+    <Folder Include="admin\js\tinymce\plugins\wordcount\" />
+    <Folder Include="admin\js\tinymce\skins\" />
+    <Folder Include="admin\js\tinymce\skins\lightgray\" />
+    <Folder Include="admin\js\tinymce\skins\lightgray\fonts\" />
+    <Folder Include="admin\js\tinymce\skins\lightgray\img\" />
+    <Folder Include="admin\js\tinymce\themes\" />
+    <Folder Include="admin\js\tinymce\themes\modern\" />
+    <Folder Include="admin\ajax\" />
+    <Folder Include="admin\css\" />
+    <Folder Include="admin\images\" />
+    <Folder Include="admin\views\" />
+    <Folder Include="admin\template\" />
+    <Folder Include="admin\widgets\" />
+    <Folder Include="config\" />
+    <Folder Include="functions\" />
+    <Folder Include="admin\" />
+    <Folder Include="js\" />
+    <Folder Include="views\" />
+    <Folder Include="uploads\" />
+    <Folder Include="widgets\" />
+    <Folder Include="template\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="admin\css\dropzone.css" />
+    <Content Include="admin\images\newlogo.png" />
+    <Content Include="admin\images\spritemap.png" />
+    <Content Include="admin\js\tinymce\jquery.tinymce.min.js" />
+    <Content Include="admin\js\tinymce\langs\readme.md" />
+    <Content Include="admin\js\tinymce\license.txt" />
+    <Content Include="admin\js\tinymce\plugins\advlist\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\anchor\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\autolink\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\autoresize\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\autosave\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\bbcode\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\charmap\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\code\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\colorpicker\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\contextmenu\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\directionality\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-cool.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-cry.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-embarassed.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-foot-in-mouth.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-frown.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-innocent.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-kiss.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-laughing.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-money-mouth.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-sealed.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-smile.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-surprised.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-tongue-out.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-undecided.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-wink.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\img\smiley-yell.gif" />
+    <Content Include="admin\js\tinymce\plugins\emoticons\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\example\dialog.html" />
+    <Content Include="admin\js\tinymce\plugins\example\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\example_dependency\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\fullpage\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\fullscreen\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\hr\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\image\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\importcss\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\insertdatetime\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\layer\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\legacyoutput\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\link\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\lists\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\media\moxieplayer.swf" />
+    <Content Include="admin\js\tinymce\plugins\media\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\nonbreaking\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\noneditable\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\pagebreak\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\paste\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\preview\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\print\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\save\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\searchreplace\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\spellchecker\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\tabfocus\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\table\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\template\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\textcolor\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\textpattern\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\visualblocks\css\visualblocks.css" />
+    <Content Include="admin\js\tinymce\plugins\visualblocks\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\visualchars\plugin.min.js" />
+    <Content Include="admin\js\tinymce\plugins\wordcount\plugin.min.js" />
+    <Content Include="admin\js\tinymce\skins\lightgray\content.inline.min.css" />
+    <Content Include="admin\js\tinymce\skins\lightgray\content.min.css" />
+    <Content Include="admin\js\tinymce\skins\lightgray\fonts\tinymce-small.eot" />
+    <Content Include="admin\js\tinymce\skins\lightgray\fonts\tinymce-small.svg" />
+    <Content Include="admin\js\tinymce\skins\lightgray\fonts\tinymce-small.ttf" />
+    <Content Include="admin\js\tinymce\skins\lightgray\fonts\tinymce-small.woff" />
+    <Content Include="admin\js\tinymce\skins\lightgray\fonts\tinymce.eot" />
+    <Content Include="admin\js\tinymce\skins\lightgray\fonts\tinymce.svg" />
+    <Content Include="admin\js\tinymce\skins\lightgray\fonts\tinymce.ttf" />
+    <Content Include="admin\js\tinymce\skins\lightgray\fonts\tinymce.woff" />
+    <Content Include="admin\js\tinymce\skins\lightgray\img\anchor.gif" />
+    <Content Include="admin\js\tinymce\skins\lightgray\img\loader.gif" />
+    <Content Include="admin\js\tinymce\skins\lightgray\img\object.gif" />
+    <Content Include="admin\js\tinymce\skins\lightgray\img\trans.gif" />
+    <Content Include="admin\js\tinymce\skins\lightgray\skin.ie7.min.css" />
+    <Content Include="admin\js\tinymce\skins\lightgray\skin.min.css" />
+    <Content Include="admin\js\tinymce\themes\modern\theme.min.js" />
+    <Content Include="admin\js\tinymce\tinymce.min.js" />
+    <Content Include="js\jssor.slider.mini.js" />
+  </ItemGroup>
+</Project>
