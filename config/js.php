@@ -40,7 +40,7 @@
                 $(".side-btn").click(function () {
                     
                     $(".bg").toggle();
-                    $("#frame").html($(this).text());
+                    $("#frame").load("views/res.html")
                     $("#frame").toggle();
                    
                 });

@@ -19,8 +19,14 @@
 
         $r=mysqli_query($dbc, $q);
         while($list=mysqli_fetch_assoc($r)){
-                            
-            $blurb=substr(strip_tags($list['body']),0,120);
+            	
+               	if ($list['path']!=' ') {
+					   $blurb=substr(strip_tags($list['path']),0,120);
+				   } else {
+						$blurb=substr(strip_tags($list['body']),0,120);	   
+				   }
+				               
+            	
                             
             ?>
                     
@@ -38,7 +44,7 @@
             <p class="list-group-item-text"><?php echo $blurb;?></p>
         </div>
                     
-                <?php }?>
+       	<?php }?>
         </div>
     </div>
 
@@ -58,7 +64,7 @@
 
                     <option></option>
                     <?php 
-                    $dbc=mysqli_connect("localhost","pallav","root","mca") or die("Error:.." .mysqli_connect_error);
+                    $dbc=mysqli_connect("localhost","root","root","mca") or die("Error:.." .mysqli_connect_error);
 
                     $sql = "SELECT * FROM sidebar ORDER BY id ASC";
                     $items = mysqli_query($dbc,$sql);
@@ -79,6 +85,11 @@
             <textarea name="body" class="form-control editor" id="body"  rows="8" placeholder="List Body">
                 <?php echo $opened['body']; ?>
             </textarea>
+            </div>
+            
+            <div class="form-group">
+            <label for="pathof">Refrence page</label>
+            <input type="pathof" name="pathof" class="form-control" value="<?php echo $opened['path']; ?>" id="pathof" placeholder="path of the data in this link">
             </div>
 
             <button type="submit" class="btn btn-default">Save</button>
