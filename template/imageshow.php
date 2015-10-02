@@ -1,6 +1,6 @@
 
        
-        <div id="slider1_container" style="display: none; position: relative; margin: 0px; width: 1200px; height: 300px; overflow: hidden;">
+        <div id="slider1_container" style="display: none; position: relative; margin: 0px; width: 1200px; height: 450px; overflow: hidden;">
 
             <!-- Loading Screen -->
             <div u="loading" style="position: absolute; top: 0px; left: 0px;">
@@ -15,22 +15,21 @@
             </div>
 
             <!-- Slides Container -->
-            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1200px; height: 442px; overflow: hidden;">
-                <div>
-                    <img u="image" src2="images/1.jpg" />
-                </div>
-                <div>
-                    <img u="image" src2="images/2.jpg" />
-                </div>
-                <div>
-                    <img u="image" src2="images/3.jpg" />
-                </div>
-                <div>
-                    <img u="image" src2="images/4.jpg" />
-                </div>
-                <div>
-                    <img u="image" src2="images/5.jpg" />
-                </div>
+            <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 10px; width: 1200px; height: 450px; overflow: hidden;">
+
+            <?php
+				 if ($handle = opendir('./images')) {
+				   while (false !== ($file = readdir($handle)))
+				      {
+				          if ($file != "." && $file != "..")
+					  	{
+				          	$thelist .= "<div><img u='image' src2='images/".$file."' width='1200px' height='450px'/></div>";
+				          }
+				       }
+				  closedir($handle);
+				  }       
+				?>
+                <?=$thelist?>
             </div>
             
             <!--#region Bullet Navigator Skin Begin -->

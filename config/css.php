@@ -22,6 +22,7 @@
     body {
         /* Margin bottom by footer height */
         margin-bottom: 60px;
+        background-color: #DCDCDC;
         /* Move down content because we have a fixed navbar that is 50px tall */
         padding-top: 50px;
     }
@@ -32,7 +33,13 @@
         width: 100%;
         /* Set the fixed height of the footer here */
         height: 60px;
-        background-color: #f5f5f5;
+      	background-image:-webkit-linear-gradient(top,#3c3c3c 0,#222 100%);
+    	background-image:-o-linear-gradient(top,#3c3c3c 0,#222 100%);
+    	background-image:-webkit-gradient(linear,left top,left bottom,from(#3c3c3c),to(#222));
+    	background-image:linear-gradient(to bottom,#3c3c3c 0,#222 100%);
+    	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+    	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    	background-repeat:repeat-x;
     }
 
     /*
@@ -59,6 +66,7 @@
         
       .sidebar {
         position: fixed;
+        height:100%;
         top: 51px;
         bottom: 0;
         left: 0;
@@ -71,12 +79,32 @@
         border-right: 1px solid #eee;
       }
     }
-
     .navbar-nav > li > a {padding-top:20px !important; padding-bottom:25px !important;padding-right:30px} 
     .navbar {min-height:65px !important}
 
     /* Sidebar navigation */
+   
+   	.row.vdivide [class*='col-']:not(:last-child):after {
+	  background: #e0e0e0;
+	  width: 1px;
+	  content: "";
+	  display:block;
+	  position: absolute;
+	  top:0;
+	  bottom: 0;
+	  right: 0;
+	  min-height: 70px;
+	}
+   
     .nav-sidebar {
+    	padding-top:10px;
+    	background-image:-webkit-linear-gradient(top,#3c3c3c 0,#222 100%);
+    	background-image:-o-linear-gradient(top,#3c3c3c 0,#222 100%);
+    	background-image:-webkit-gradient(linear,left top,left bottom,from(#3c3c3c),to(#222));
+    	background-image:linear-gradient(to bottom,#3c3c3c 0,#222 100%);
+    	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
+    	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
+    	background-repeat:repeat-x;
         margin-right: -21px; /* 20px padding + 1px border */
         margin-bottom: 10px;
         margin-left: -10px;
@@ -135,13 +163,15 @@
         position: absolute;
         top:30px;
         width:80%;
-        height: 90%;
+        height: 500px;
         z-index: 2000;
         overflow-y:scroll;
+        overflow-x:scroll;
         background-color:white;
         box-shadow: 2px 2px 5px #CCCCCC;
     
     }
+    
     
     .bg{
         position:fixed;

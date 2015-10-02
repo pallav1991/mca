@@ -13,7 +13,7 @@
 <link rel="stylesheet" href="../css/font-awesome-4.4.0/font-awesome-4.4.0/css/font-awesome.min.css">
 <!-- DropZone css  -->
 <link rel="stylesheet" href="css/dropzone.css" />
-<link rel="stylesheet" href="https://rawgit.com/enyo/dropzone/master/dist/dropzone.css">
+
 
 <?php
 //css
@@ -64,6 +64,8 @@ background-color: #f5f5f5;
     border-right: 1px solid #eee;
   }
 }
+
+
 
 /* Sidebar navigation */
 .nav-sidebar {

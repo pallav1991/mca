@@ -15,14 +15,22 @@ switch($page){
                 $header=mysqli_real_escape_string($dbc,$_POST['header']);
                 $body=mysqli_real_escape_string($dbc,$_POST['body']);
             
-                if(isset($_GET['id']) != ' '){
-                    $action='Update';
-                    $q="UPDATE posts SET user = $_POST[user], slug='$_POST[slug]', title='$title', label= '$label', header='$header', body='$body' WHERE ID=$_GET[id]";
-                }else{
-                    $action='Added';
-                    $q="INSERT INTO posts (type, user,slug,title,label,header,body) Values(1, $_POST[user],'$_POST[slug]','$title','$label','$header','$body')";
-					$n="INSERT INTO navigation (label,url,target,position,status) Values('$label','$_POST[slug]','',1,1)";
-                }
+				if (isset($_GET['id'])) {
+				
+					if($_GET['id'] != ' '){
+	                    $action='Update';
+	                    $q="UPDATE posts SET user = $_POST[user], slug='$_POST[slug]', title='$title', label= '$label', header='$header', body='$body' WHERE ID=$_GET[id]";
+	                }else{
+	                    $action='Added';
+	                    $q="INSERT INTO posts (type, user,slug,title,label,header,body) Values(1, $_POST[user],'$_POST[slug]','$title','$label','$header','$body')";
+						$n="INSERT INTO navigation (label,url,target,position,status) Values('$label','$_POST[slug]','',1,1)";
+	                }
+					
+				} else {
+					
+				}
+				
+                
             
             
                 $r=mysqli_query($dbc,$q);
@@ -144,6 +152,40 @@ switch($page){
 
         
         break;
+		
+		case 'studentact':
+        
+        
+        if(isset($_POST['submitted']) == 1){
+            
+            $value=mysqli_real_escape_string($dbc,$_POST['stat']);
+            
+            if(isset($_GET['id']) != ''){
+                if ($value==0) {
+				$action="Deactivated";
+			} else {
+				$action="Activated";
+			}
+                $q="UPDATE student SET status=$value WHERE Roll_No='$_POST[openedid]'";
+                $r=mysqli_query($dbc,$q);  
+            }
+            
+            
+            
+            if($r){
+                $message = '<p class="alert alert-success"> Student '.$_POST['Name'].' was '.$action.'</p>';
+            }else{
+                
+                $message = '<p class="alert alert-danger"> Setting'. $_POST['Name'] .' was not '. $action .' because. </p>'.mysqli_error($dbc);
+                $message .= '<p class="alert alert-warning"> Query: '.$q.'</p>';
+            }
+            
+        }
+        
+
+
+        
+        break;
 
     case 'sidebar':
         if(isset($_POST['submitted']) == 1){
@@ -151,9 +193,10 @@ switch($page){
                 $title=mysqli_real_escape_string($dbc,$_POST['title']);
                 $master=mysqli_real_escape_string($dbc,$_POST['master']);
                 $body=mysqli_real_escape_string($dbc,$_POST['body']);
+				$pat=mysqli_real_escape_string($dbc,$_POST['pathof']);
               
-				if($_POST['master']!= '' || $_POST['master']!= ' ' || $_POST['master']!= NULL){
-				 $result = mysqli_query($dbc,"SELECT a.id, a.title, a.body, Deriv1.Count FROM  sidebar a LEFT OUTER JOIN (SELECT parent_id, COUNT( * ) AS Count FROM  sidebar GROUP BY parent_id)Deriv1 ON a.id = Deriv1.parent_id WHERE a.title =$_POST[master]")or die("Invalid query at result join: " .mysql_error(). " ");
+				if($_POST['master']!= null){
+					$result = mysqli_query($dbc,"SELECT a.id,a.master, a.title, a.body, a.path, Deriv1.Count FROM  sidebar a LEFT OUTER JOIN (SELECT parent_id, COUNT( * ) AS Count FROM  sidebar GROUP BY parent_id)Deriv1 ON a.id = Deriv1.parent_id WHERE a.parent_id ='". $master ."'")or die('Invalid query is : ' .mysql_error());
 
 				while ($row = $result->fetch_assoc()/*mysql_fetch_assoc($result)*/) {
 					$pid=$row['id'];
@@ -165,20 +208,20 @@ switch($page){
             
                 if(isset($_POST['id']) != ''){
                     $action='Update';
-                    $q="UPDATE sidebar SET  title='$title', master= '$master', body='$body', $parent_id= $pid WHERE id =$_POST[id]";
+                    $q="UPDATE sidebar SET  title='$title', master= '$master', body='$body', parent_id= $pid, path= '$pat' WHERE id =$_POST[id]";
                 }else{
                     $action='Added';
-                    $q="INSERT INTO sidebar (title, master,body,parent_id) Values('$title','$master','$body',$pid)";
+                    $q="INSERT INTO sidebar (title, master,body,parent_id,path) Values('$title','$master','$body',$pid,'$pat')";
                 
                 }
             
             
                 $r=mysqli_query($dbc,$q);
                 if($r){
-                    $message = '<p class="bg-success"> Page was '. $action .'</p>';
+                    $message = '<p class="bg-success"> entery was '. $action .'</p>';
                 }else{
                 
-                    $message = '<p class="bg-danger"> Page Counld not be '. $action .' because. </p>'.mysqli_error($dbc);
+                    $message = '<p class="bg-danger"> Entry Counld not be '. $action .' because. </p>'.mysqli_error($dbc);
                     $message .= '<p class="bg-warning">'.$q.'</p>';
                 }
             
@@ -196,10 +239,4 @@ switch($page){
         break;
 
 }
-
-
-
-
-
-
 ?>

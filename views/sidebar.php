@@ -28,7 +28,7 @@ function display_children($parent, $level,$id) {
 
 
 <!-- Function call is here -->
-<div class="col-sm-3 col-md-2 sidebar-offcanvas" id="sidebar" role="navigation">
+<div class="col-sm-3 col-md-2  border-right vdivide" id="sidebar" role="navigation">
    <div id="listContainer"> 
         <?php
          display_children(0,1,"id='expList'");

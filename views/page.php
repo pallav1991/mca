@@ -1,6 +1,8 @@
 <div class="container-fluid">
-<div class="row row-offcanvas row-offcanvas-left">
-<?php include('sidebar.php'); ?>
+<div class="row ">
+	
+	<?php include('sidebar.php'); ?>
+    
     <div class="col-sm-9 col-md-10 main">
         <?php if($page["slug"]=="home"){ include(D_Temp.'/imageshow.php'); }?>
         <div class="placeholders h4">
