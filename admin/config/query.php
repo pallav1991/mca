@@ -189,14 +189,14 @@ switch($page){
 
     case 'sidebar':
         if(isset($_POST['submitted']) == 1){
-            
+            	$pid=mysqli_real_escape_string($dbc,$_POST['id']);
                 $title=mysqli_real_escape_string($dbc,$_POST['title']);
                 $master=mysqli_real_escape_string($dbc,$_POST['master']);
                 $body=mysqli_real_escape_string($dbc,$_POST['body']);
 				$pat=mysqli_real_escape_string($dbc,$_POST['pathof']);
               
 				if($_POST['master']!= null){
-					$result = mysqli_query($dbc,"SELECT a.id,a.master, a.title, a.body, a.path, Deriv1.Count FROM  sidebar a LEFT OUTER JOIN (SELECT parent_id, COUNT( * ) AS Count FROM  sidebar GROUP BY parent_id)Deriv1 ON a.id = Deriv1.parent_id WHERE a.parent_id ='". $master ."'")or die('Invalid query is : ' .mysql_error());
+					$result = mysqli_query($dbc,"SELECT a.id,a.master, a.title, a.body, a.path, Deriv1.Count FROM  sidebar a LEFT OUTER JOIN (SELECT parent_id, COUNT( * ) AS Count FROM  sidebar GROUP BY parent_id)Deriv1 ON a.id = Deriv1.parent_id WHERE a.parent_id ='". $pid ."'")or die('Invalid query is : ' .mysql_error());
 
 				while ($row = $result->fetch_assoc()/*mysql_fetch_assoc($result)*/) {
 					$pid=$row['id'];

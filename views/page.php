@@ -8,7 +8,6 @@
         <div class="placeholders h4">
             <h1><?php echo $page['header']; ?></h1>
         </div>
-
         <div class="placeholder">
         <?php echo $page['body'] ?>
         </div>

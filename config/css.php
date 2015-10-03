@@ -98,13 +98,6 @@
    
     .nav-sidebar {
     	padding-top:10px;
-    	background-image:-webkit-linear-gradient(top,#3c3c3c 0,#222 100%);
-    	background-image:-o-linear-gradient(top,#3c3c3c 0,#222 100%);
-    	background-image:-webkit-gradient(linear,left top,left bottom,from(#3c3c3c),to(#222));
-    	background-image:linear-gradient(to bottom,#3c3c3c 0,#222 100%);
-    	filter:progid:DXImageTransform.Microsoft.gradient(startColorstr='#ff3c3c3c', endColorstr='#ff222222', GradientType=0);
-    	filter:progid:DXImageTransform.Microsoft.gradient(enabled=false);
-    	background-repeat:repeat-x;
         margin-right: -21px; /* 20px padding + 1px border */
         margin-bottom: 10px;
         margin-left: -10px;

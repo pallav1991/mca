@@ -39,8 +39,13 @@
                 
                 $(".side-btn").click(function () {
                     
+                    var $input=$( this );
                     $(".bg").toggle();
-                    $("#frame").load("views/res.html")
+                    if($input.attr("myattr")!=''){
+                    	$("#frame").load($input.attr("myattr"));
+                    }else{
+                    	$("#frame").html("<center><h1>Comming Soon</h1></center>");
+                    }
                     $("#frame").toggle();
                    
                 });
