@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: 127.0.0.1
--- Generation Time: Oct 04, 2015 at 06:47 PM
+-- Generation Time: Oct 04, 2015 at 09:34 PM
 -- Server version: 5.6.17
 -- PHP Version: 5.5.12
 
@@ -58,39 +58,14 @@ CREATE TABLE IF NOT EXISTS `notification` (
   `Teacher_Name` varchar(50) NOT NULL,
   `Date` date NOT NULL,
   PRIMARY KEY (`Id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=30 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=32 ;
 
 --
 -- Dumping data for table `notification`
 --
 
 INSERT INTO `notification` (`Id`, `Notification`, `Notification_For`, `Teacher_Name`, `Date`) VALUES
-(4, ' 13-06-2015 Meeting Of All CR', 'First Year', 'Navin Peedaboina', '2015-10-04'),
-(5, ' paaal', 'Second Year', 'Navin Peedaboina', '2015-10-04'),
-(6, ' Meeting for Placement on 25-12-2015', 'Third Year', ' ', '2015-10-04'),
-(7, ' Helllo Navin', 'Third Year', ' ', '2015-10-04'),
-(8, ' nnnnn', 'First Year', ' ', '2015-10-04'),
-(9, 'pallav', 'First Year', ' ', '2015-10-04'),
-(10, ' cfd', 'First Year', ' ', '2015-10-04'),
-(11, ' dfsdf', 'First Year', ' ', '2015-10-04'),
-(12, ' dfg', 'First Year', ' ', '2015-10-04'),
-(13, ' dffdf', 'First Year', ' ', '2015-10-04'),
-(14, ' dfdsf', 'First Year', ' ', '2015-10-04'),
-(15, ' nbjhg', 'First Year', ' ', '2015-10-04'),
-(16, ' n ', 'First Year', ' ', '2015-10-04'),
-(17, ' hjggh', 'First Year', ' ', '2015-10-04'),
-(18, ' bshffb', 'First Year', ' ', '2015-10-04'),
-(19, ' nbmnb', 'First Year', ' ', '2015-10-04'),
-(20, ' ahjsklagldad', 'First Year', ' ', '2015-10-04'),
-(21, ' safgahvhadv', 'First Year', ' ', '2015-10-04'),
-(22, ' safgahvhadv', 'First Year', ' ', '2015-10-04'),
-(23, ' navin', 'First Year', ' ', '2015-10-04'),
-(24, ' navin', 'First Year', ' ', '2015-10-04'),
-(25, ' Aman', 'First Year', ' ', '2015-10-04'),
-(26, ' Aman', 'First Year', ' ', '2015-10-04'),
-(27, ' Brahma', 'First Year', ' ', '2015-10-04'),
-(28, ' Pallav', 'First Year', ' ', '2015-10-04'),
-(29, 'Jasash', 'First Year', ' ', '2015-10-04');
+(31, ' Mini Project submission last date is 5-10-15 ', 'Third Year', ' ', '2015-10-04');
 
 -- --------------------------------------------------------
 
@@ -184,15 +159,14 @@ CREATE TABLE IF NOT EXISTS `sidebar` (
 
 INSERT INTO `sidebar` (`id`, `title`, `master`, `body`, `parent_id`, `path`) VALUES
 (2, 'curiculam', '', '', 0, ''),
-(3, 'Reserch', 'curiculam', '<p>This is a child</p>', 2, 'views/res.html'),
+(3, 'Reserch', 'curiculam', '<p>This is a child</p>', 3, 'views/Research.html'),
 (6, 'Placement', '', '', 0, ''),
-(8, 'Pre-placement', 'Placement', '', 6, ''),
-(9, 'Companies', 'Placement', '<p>Companies visited to our campus</p>', 6, ''),
-(10, 'Student Places', 'Placement', '<p>Student Places on this page</p>', 6, ''),
-(11, 'Student', '', '<p>Student Section</p>', 0, ''),
+(8, 'Pre-placement', 'Placement', '', 6, 'views/Pre-Placment.html'),
+(9, 'Companies', 'Placement', '<p>Companies visited to our campus</p>', 6, 'views/company.html'),
+(11, 'Student', '', '<p>Student Section</p>', 0, 'views/students.html'),
 (12, 'Faculty', '', '<p>faculty information</p>', 0, 'views/staff.html'),
 (13, 'Gallery', '', '', 0, ''),
-(14, 'Extra-Curiculam', 'curiculam', '', 2, ''),
+(14, 'Extra-Curiculam', 'curiculam', '', 2, 'views/ExtraCur.html'),
 (15, 'Login', '', '<p>Login</p>', 0, 'views/Login.php');
 
 -- --------------------------------------------------------
@@ -270,7 +244,7 @@ CREATE TABLE IF NOT EXISTS `upload` (
   `fyear` varchar(100) NOT NULL,
   `sby` varchar(200) NOT NULL,
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=13 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=15 ;
 
 --
 -- Dumping data for table `upload`
@@ -280,7 +254,9 @@ INSERT INTO `upload` (`id`, `name`, `uname`, `fyear`, `sby`) VALUES
 (9, 'npm.js', '53039', 'First Year', 'teacher'),
 (10, 'jquery.js', 'email@gmail.com', 'Second Year', 'teacher'),
 (11, 'jssor.slider.mini.js', 'email@gmail.com', 'Third Year', 'teacher'),
-(12, 'glyphicons-halflings-regular.ttf', '53039', 'First Year', 'Student');
+(12, 'glyphicons-halflings-regular.ttf', '53039', 'First Year', 'Student'),
+(13, 'Candidate Confirmation.pdf', 'email@gmail.com', 'Third Year', 'teacher'),
+(14, 'Candidate Confirmation.pdf', 'email@gmail.com', 'Third Year', 'teacher');
 
 -- --------------------------------------------------------
 
@@ -297,7 +273,7 @@ CREATE TABLE IF NOT EXISTS `users` (
   `password` varchar(200) NOT NULL,
   `status` int(1) NOT NULL DEFAULT '1',
   PRIMARY KEY (`id`)
-) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=4 ;
+) ENGINE=InnoDB  DEFAULT CHARSET=latin1 AUTO_INCREMENT=7 ;
 
 --
 -- Dumping data for table `users`
@@ -305,8 +281,9 @@ CREATE TABLE IF NOT EXISTS `users` (
 
 INSERT INTO `users` (`id`, `avatar`, `first`, `last`, `email`, `password`, `status`) VALUES
 (1, '1433224545747.jpg', 'pallav', 'poddar', 'poddar6@gmail.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 1),
-(2, '1433224284529.jpg', 'shashi', 'rihar', 'sughandhi19@gmail.com', 'da39a3ee5e6b4b0d3255bfef95601890afd80709', 1),
-(3, '1443784098973.jpg', 'suraj', 'more', 'surajpatil@mca.com', '5baa61e4c9b93f3f0682250b6cf8331b7ee68fd8', 0);
+(4, '', 'Navin', 'Peedaboina', 'navin9822@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 1),
+(5, '', 'Brahamananda', 'Phatak', 'brahmaphatak1994@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 1),
+(6, '', 'Aman', 'Rajput', 'amanrajput575@gmail.com', '5f4dcc3b5aa765d61d8327deb882cf99', 1);
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
 /*!40101 SET CHARACTER_SET_RESULTS=@OLD_CHARACTER_SET_RESULTS */;
