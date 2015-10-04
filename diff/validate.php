@@ -1,5 +1,6 @@
 <?php
-	$conn =@mysql_connect('localhost','root','root')or die("Couldn't connect to server");
+	include("connection.php");
+	$conn =$db;
 	$db =mysql_select_db("mca",$conn);
 	$username = $_POST['username'];
 	$password = $_POST['password'];
@@ -9,6 +10,7 @@
 	
 	if(isset($radio)&& $radio=="student")
 	{
+		
 		$query="SELECT Roll_No,Email,Password,status FROM student WHERE Roll_No = $username OR Email = $username";
 		$result=mysql_query($query);
 		if($result)
@@ -29,10 +31,18 @@
 				 header('Location: Login.php?msg=Username or Password is wrong');
 			}
 		}
+		
 			
 	}
 	else if(isset($radio) && $radio=="teacher")
 	{
+	
+		if(is_numeric($username))
+		{
+			header('Location: Login.php?msg=Please select correct stream Student or Teacher');
+		}
+		else
+		{
 		$query="SELECT Email,Password FROM teacher_details WHERE Email = '$username'";
 		$result=mysql_query($query);
 		print_r($result);
@@ -54,10 +64,11 @@
 				header('Location: Login.php?msg=Username or Password is wrong');
 			}
 		}
+		}
 	}
 	else
 	{
-		header('Location: Login.php?msg=Username or Password is wrong');
+		header('Location: Login.php?msg=Please select stream Student or Teacher');
 	}
 
 ?>

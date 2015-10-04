@@ -67,7 +67,7 @@ echo "Not Printing";
 				$row=mysql_fetch_array($result);
 			?>
 			<br>
-			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin-bottom: 1px; margin-right: 0.25px;">
+			<nav class="navbar navbar-inverse navbar-fixed-top" role="navigation" style="margin:.3em; margin-bottom: 1px; margin-right: 0.25em;">
 			
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
@@ -82,9 +82,8 @@ echo "Not Printing";
 			<div id="navbar" class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
 				  <li role="presentation" ><a class="ajax-link" href="Stud_Home.php">Home</a></li>
-				  <li role="presentation"><a href="#">Notification</a></li>
+				  <li role="presentation"><a class="ajax-link" href="Send_Notification.php">Notification</a></li>
 				  <li role="presentation"><a class="ajax-link" href="upload.php">Upload</a></li>
-				  <li role="presentation"><a href="#">Download</a></li>
 				 </ul>
 			 <div class="pull-right">
 				 <ul class="nav navbar-nav">

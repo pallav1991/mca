@@ -24,10 +24,7 @@ echo "Not Printing";
 			
 			</script>
 		
-		<style>
-			body {background-color:#B0C4DE;
-			color:white;}
-		</style>
+		
 	</head>
 			<body>
 			<div>
@@ -44,7 +41,7 @@ echo "Not Printing";
 							  <li role="presentation"><a href="#">Mr. Yogeshchandra Puranik</a></li>
 							  <li role="presentation"><a href="#">Ms. Maithali Vadkar</a></li>
 							  <li role="presentation" ><a class="ajax-link" href="Stud_Home.php">Ms. Shivani Budhakar</a></li>
-							  <li role="presentation"><a class="ajax-link" href="list_files.php?tname=prakash&sby=teacher">Mr. Prakash Kene</a></li>
+							  <li role="presentation"><a class="ajax-link" href="list_files.php?tname=Prakash&sby=teacher">Mr. Prakash Kene</a></li>
 							  <li role="presentation"><a href="#">Ms. Netraja Muley</a></li>
 							  <li role="presentation"><a href="#">Mr. Shripad Bhide</a></li>
 							  <li role="presentation"><a href="#">Ms. Swati Ghule</a></li>
