@@ -18,7 +18,13 @@ function display_children($parent, $level,$id) {
             display_children($row['id'], $level + 1," ");
             echo "</li>";
         } elseif ($row['Count']==0 || $row['Count']==NULL) {
-            echo "<li><a href='#' class='side-btn' myAttr='".$row['path']."'>" . $row['title'] . "</a></li>";
+        	if ($row['title']=="Login") {
+				echo "<li><a href='diff/Login.php' >" . $row['title'] . "</a></li>";	
+			} else {
+				echo "<li><a href='#' class='side-btn' myAttr='".$row['path']."'>" . $row['title'] . "</a></li>";
+			}
+			
+            
         } else;
     }
     echo "</ul>";
