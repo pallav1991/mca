@@ -1,7 +1,7 @@
 <?php
 
-	$conn = @mysql_connect('localhost','root','')or die("Couldn't connect to server");
-	$db =mysql_select_db("MCA_DB",$conn);
+	$conn = @mysql_connect("localhost","root","root")or die("Couldn't connect to server");
+	$db =mysql_select_db("mca");
 	
 	$Fname=$_POST['FnameInput'];
 	$Mname=$_POST['MnameInput'];
@@ -19,17 +19,17 @@
 	
 	if($A_Year=="First Year")
 	{
-		$query="INSERT INTO first_year VALUES('$Fname','$Mname','$Lname','$DOB','$Gender','$Email','$A_Year',$Rollno,'$Password','$P_Add','$C_Add','$State',$Contact)";
+		$query="INSERT INTO  student(First_Name,Middle_Name,Last_Name,DOB,Gender,Email,Appearing_Year,Roll_No,Password,P_Address,C_Address,State,Contact) VALUES('$Fname','$Mname','$Lname','$DOB','$Gender','$Email','$A_Year',$Rollno,'$Password','$P_Add','$C_Add','$State',$Contact)";
 	}
 	
 	else if($A_Year=="Second Year")
 	{
-		$query="INSERT INTO second_year VALUES('$Fname','$Mname','$Lname','$DOB','$Gender','$Email','$A_Year',$Rollno,'$Password','$P_Add','$C_Add','$State',$Contact)";
+		$query="INSERT INTO student(First_Name,Middle_Name,Last_Name,DOB,Gender,Email,Appearing_Year,Roll_No,Password,P_Address,C_Address,State,Contact) VALUES('$Fname','$Mname','$Lname','$DOB','$Gender','$Email','$A_Year',$Rollno,'$Password','$P_Add','$C_Add','$State',$Contact)";
 	}
 	
 	else if($A_Year=="Third Year")
 	{
-		$query="INSERT INTO third_year VALUES('$Fname','$Mname','$Lname','$DOB','$Gender','$Email','$A_Year',$Rollno,'$Password','$P_Add','$C_Add','$State',$Contact)";
+		$query="INSERT INTO student (First_Name,Middle_Name,Last_Name,DOB,Gender,Email,Appearing_Year,Roll_No,Password,P_Address,C_Address,State,Contact) VALUES('$Fname','$Mname','$Lname','$DOB','$Gender','$Email','$A_Year',$Rollno,'$Password','$P_Add','$C_Add','$State',$Contact)";
 	}
 	
 		$result=mysql_query($query);
