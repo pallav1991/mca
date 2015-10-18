@@ -1,0 +1,36 @@
+<?php
+
+define('D_Temp','template');
+
+error_reporting(0);
+
+
+//database connection
+include('config/connection.php');
+
+
+
+//functions
+include("functions/data.php");
+include("functions/template.php");
+include("functions/sandbox.php");
+
+$debug=data_setting_value('debug-status');
+
+$site_title="Mca Login";
+
+if(isset($_GET['page'])){
+
+    $page = $_GET['page'];
+}else{
+
+    $page = 'home';
+}
+include("config/query.php");
+
+
+
+$user= data_user($dbc,$_SESSION['username']);
+
+
+?>

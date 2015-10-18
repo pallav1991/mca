@@ -19,7 +19,7 @@ function display_children($parent, $level,$id) {
             echo "</li>";
         } elseif ($row['Count']==0 || $row['Count']==NULL) {
         	if ($row['title']=="Login") {
-				echo "<li><a href='diff/Login.php' >" . $row['title'] . "</a></li>";	
+				echo "<li><a href='stud_tech/index.php' >" . $row['title'] . "</a></li>";	
 			} else {
 				echo "<li><a href='#' class='side-btn' myAttr='".$row['path']."'>" . $row['title'] . "</a></li>";
 			}
